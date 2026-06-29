@@ -26,10 +26,10 @@ downloader.Parent = Instance.new('ScreenGui', gethui and gethui() or cloneref(ga
 local function downloadFile(path, func)
 	if not isfile(path) then
 		if not license.Closet then
-			downloader.Text = 'Downloading '.. path
+			downloader.Text = 'nerv4: Downloading '.. path
 		end
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/MaxlaserTech/CatV6/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/iiiiiiiiiiiiiiiih/nerv4/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
@@ -59,7 +59,7 @@ end
 
 for _, folder in {'catrewrite', 'catrewrite/games', 'catrewrite/profiles', 'catrewrite/assets', 'catrewrite/libraries', 'catrewrite/guis'} do
 	if not isfolder(folder) then
-		downloader.Text = 'Downloading '.. folder
+		downloader.Text = 'nerv4: Downloading '.. folder
 		makefolder(folder)
 	end
 end
@@ -68,7 +68,7 @@ if not shared.VapeDeveloper then
 	local commit = license.Commit or nil
 	if not commit then
 		local _, subbed = pcall(function() 
-			return game:HttpGet('https://github.com/MaxlaserTech/CatV6') 
+			return game:HttpGet('https://github.com/iiiiiiiiiiiiiiiih/nerv4') 
 		end)
 		commit = subbed:find('currentOid')
 		commit = commit and subbed:sub(commit + 13, commit + 52) or nil
